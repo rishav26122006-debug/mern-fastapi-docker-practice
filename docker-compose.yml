@@ -11,13 +11,15 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MONGO_URI: mongodb://mongo:27017/task_manager
+      MONGO_URI: ${MONGO_URI}
     depends_on:
       - mongo
+
   fastapi:
     image: task-manager-fastapi:latest
     ports:
       - "8000:8000"
+
   mongo:
     image: mongo:8
     ports:
