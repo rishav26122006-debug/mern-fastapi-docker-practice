@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
 
-const API = "http://localhost:5000/api";
-const FASTAPI = "http://localhost:8000";
+const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+const FASTAPI = import.meta.env.VITE_FASTAPI_URL || "http://localhost:8000";
 
 function App() {
   const [tasks, setTasks] = useState([]);
