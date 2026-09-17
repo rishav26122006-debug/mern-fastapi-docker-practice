@@ -1,0 +1,29 @@
+services:
+  frontend:
+    image: task-manager-frontend:latest
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  backend:
+    image: task-manager-backend:latest
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: mongodb://mongo:27017/task_manager
+    depends_on:
+      - mongo
+  fastapi:
+    image: task-manager-fastapi:latest
+    ports:
+      - "8000:8000"
+  mongo:
+    image: mongo:8
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

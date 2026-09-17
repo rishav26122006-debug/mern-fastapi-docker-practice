@@ -1,0 +1,25 @@
+# Node
+node_modules/
+npm-debug.log
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# React/Vite build
+dist/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Git
+.git/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
